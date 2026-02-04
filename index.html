@@ -43,20 +43,25 @@ body {
   flex: 1;
 }
 
-/* Logo + slogan */
+/* Logo + slogan - ajustado para não estourar */
 .logo-container {
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .logo {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;               /* ocupa o espaço disponível na coluna */
+  max-width: 280px;          /* limite máximo para não ficar gigante */
+  height: auto;              /* mantém proporção */
+  margin: 0 auto 10px auto;  /* centraliza se quiser, ou deixe text-align: left */
+  display: block;
 }
 
 .logo img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px;        /* opcional: arredondar cantos */
 }
 
 .slogan {
@@ -66,6 +71,47 @@ body {
   margin-top: 10px;
 }
 
+/* Seção Por que escolher - ajustada */
+.por-que {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.por-que h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1e3c72;
+}
+
+.por-que ul {
+  list-style: none;
+  padding: 0;
+}
+
+.por-que li {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  color: #333;
+  padding-left: 35px;
+  position: relative;
+}
+
+.por-que li::before {
+  content: "☀️ ";
+  position: absolute;
+  left: 0;
+  font-size: 1.4rem;
+}
+
+.por-que li strong {
+  color: #25d366;
+}
+
+/* Lado direito */
 h1, h2, h3 {
   color: #1e3c72;
 }
@@ -112,46 +158,6 @@ ul.servicos li::before {
 .btn:hover {
   background: #128C7E;
   transform: translateY(-2px);
-}
-
-/* Seção Por que escolher - ajustada para preencher bem */
-.por-que {
-  margin-top: 40px;
-  padding: 25px;
-  background: #f8f9fa;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.por-que h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #1e3c72;
-}
-
-.por-que ul {
-  list-style: none;
-  padding: 0;
-}
-
-.por-que li {
-  font-size: 16px;
-  margin-bottom: 16px;
-  line-height: 1.5;
-  color: #333;
-  padding-left: 35px;
-  position: relative;
-}
-
-.por-que li::before {
-  content: "☀️ ";
-  position: absolute;
-  left: 0;
-  font-size: 1.4rem;
-}
-
-.por-que li strong {
-  color: #25d366;
 }
 
 /* Calculadora */
@@ -229,6 +235,9 @@ ul.servicos li::before {
     gap: 40px;
     padding: 30px 20px;
   }
+  .logo {
+    max-width: 220px;  /* menor no celular para não estourar */
+  }
 }
 </style>
 </head>
@@ -237,7 +246,7 @@ ul.servicos li::before {
 
 <div class="container">
 
-  <!-- LADO ESQUERDO: sem imagem grande, só conteúdo para preencher -->
+  <!-- LADO ESQUERDO -->
   <div class="left">
     <div class="logo-container">
       <div class="logo">
@@ -254,7 +263,7 @@ ul.servicos li::before {
       garantindo economia, sustentabilidade e segurança com a qualidade ALBERBERNAZ SunSecure Energy.
     </p>
 
-    <!-- Seção Por que escolher - ajustada e ocupando espaço -->
+    <!-- Seção Por que escolher -->
     <div class="por-que">
       <h3>Por que escolher energia solar agora?</h3>
       <ul>
