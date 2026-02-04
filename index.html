@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Energia Solar | ALBERBERNAZ SunSecure Energy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background-image: url('img/fundo-solar.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.96);
+  width: 95%;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 18px;
+  display: flex;
+  gap: 50px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.left, .right {
+  flex: 1;
+}
+
+/* Logo + slogan */
+.logo-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 300px;
+  max-width: 100%;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slogan {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e3c72;
+  margin-top: 10px;
+}
+
+h1, h2, h3 {
+  color: #1e3c72;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+ul.servicos {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+ul.servicos li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+ul.servicos li::before {
+  content: "✔ ";
+  color: #25d366;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  background: #25d366;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #128C7E;
+  transform: translateY(-2px);
+}
+
+/* Seção Por que escolher - ajustada para preencher bem */
+.por-que {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.por-que h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1e3c72;
+}
+
+.por-que ul {
+  list-style: none;
+  padding: 0;
+}
+
+.por-que li {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  color: #333;
+  padding-left: 35px;
+  position: relative;
+}
+
+.por-que li::before {
+  content: "☀️ ";
+  position: absolute;
+  left: 0;
+  font-size: 1.4rem;
+}
+
+.por-que li strong {
+  color: #25d366;
+}
+
+/* Calculadora */
+.calculadora {
+  margin-top: 40px;
+  padding: 25px;
+  background: #f0f8ff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.calculadora input {
+  width: 100%;
+  padding: 14px;
+  font-size: 20px;
+  margin: 15px 0;
+  border: 2px solid #1e3c72;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.calculadora button {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.calculadora button:hover {
+  background: #0f2550;
+}
+
+#resultado {
+  margin-top: 25px;
+  padding: 20px;
+  background: #e8f5e9;
+  border-radius: 10px;
+  font-size: 17px;
+  line-height: 1.6;
+  border-left: 5px solid #25d366;
+}
+
+/* WhatsApp flutuante */
+.zap {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25d366;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.zap:hover {
+  transform: scale(1.15);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LADO ESQUERDO: sem imagem grande, só conteúdo para preencher -->
+  <div class="left">
+    <div class="logo-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="ALBERBERNAZ SunSecure Energy">
+      </div>
+      <div class="slogan">Energia Segura, Sustentável e Solar</div>
+    </div>
+
+    <h1>Energia Solar</h1>
+
+    <p>
+      Projetos de usinas solares residenciais e comerciais, com soluções 
+      <strong>On Grid, Off Grid e Híbridas</strong>, 
+      garantindo economia, sustentabilidade e segurança com a qualidade ALBERBERNAZ SunSecure Energy.
+    </p>
+
+    <!-- Seção Por que escolher - ajustada e ocupando espaço -->
+    <div class="por-que">
+      <h3>Por que escolher energia solar agora?</h3>
+      <ul>
+        <li><strong>Economia real:</strong> Reduza sua conta de luz em até 95% todos os meses</li>
+        <li><strong>Valorização do imóvel:</strong> Aumenta significativamente o valor da sua casa ou comércio</li>
+        <li><strong>Energia limpa:</strong> Zero emissão de CO₂ na geração, contribuindo para o meio ambiente</li>
+        <li><strong>Independência energética:</strong> Menos dependência da rede elétrica e dos reajustes anuais da Cemig</li>
+        <li><strong>Garantia longa:</strong> Painéis com até 30 anos de vida útil e suporte local em Minas Gerais</li>
+      </ul>
+      <p style="margin-top: 25px; font-style: italic; color: #555;">
+        Com a ALBERBERNAZ SunSecure Energy, você tem instalação profissional, homologação rápida junto à Cemig e acompanhamento completo.
+      </p>
+    </div>
+  </div>
+
+  <!-- LADO DIREITO -->
+  <div class="right">
+    <h2>Serviços</h2>
+
+    <ul class="servicos">
+      <li>Projeto e instalação de usinas solares</li>
+      <li>Homologação junto à concessionária</li>
+      <li>Manutenção preventiva e corretiva</li>
+      <li>Adequações elétricas e disjuntores</li>
+      <li>Padrão Cemig</li>
+    </ul>
+
+    <button class="btn" onclick="whats()">Solicitar orçamento agora</button>
+
+    <!-- Calculadora -->
+    <div class="calculadora">
+      <h3>Calcule quantos painéis você precisa</h3>
+      <p>Digite o valor médio da sua conta de luz mensal (R$):</p>
+      <input type="number" id="valorConta" placeholder="Ex: 250 ou 950" min="0" step="0.01">
+      <button onclick="calcular()">Calcular</button>
+
+      <div id="resultado">
+        Preencha o valor acima e clique em Calcular para ver a estimativa de painéis necessários para sua residência ou comércio em Minas Gerais.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="zap" onclick="whats()">💬</div>
+
+<script>
+function whats() {
+  const mensagem = "Olá! Gostaria de um orçamento para energia solar com a ALBERBERNAZ SunSecure Energy.";
+  window.open("https://wa.me/5532999412748?text=" + encodeURIComponent(mensagem));
+}
+
+function calcular() {
+  const valor = parseFloat(document.getElementById('valorConta').value);
+  const resultado = document.getElementById('resultado');
+
+  if (isNaN(valor) || valor <= 0) {
+    resultado.innerHTML = "<strong>Por favor, digite um valor válido (ex: 250 ou 950).</strong>";
+    return;
+  }
+
+  const tarifaKwh = 0.90;
+  const horasSolDia = 5;
+  const eficiencia = 0.80;
+  const potenciaPainelKw = 0.55;
+  const areaPorPainelM2 = 2;
+
+  const kwhMes = valor / tarifaKwh;
+  const potenciaKwp = (kwhMes / 30) / horasSolDia / eficiencia;
+  const numPaineis = Math.ceil(potenciaKwp / potenciaPainelKw);
+  const areaNecessaria = numPaineis * areaPorPainelM2;
+  const economiaAnualAprox = valor * 12 * 0.9;
+
+  resultado.innerHTML = `
+    <strong>Estimativa para R$ ${valor.toFixed(2)}:</strong><br><br>
+    Consumo mensal: <strong>${kwhMes.toFixed(0)} kWh</strong><br>
+    Potência necessária: <strong>${potenciaKwp.toFixed(2)} kWp</strong><br>
+    Número de painéis (550W): <strong>${numPaineis}</strong><br>
+    Área aproximada no telhado: <strong>${areaNecessaria.toFixed(0)} m²</strong><br><br>
+    Economia anual estimada: <strong>R$ ${economiaAnualAprox.toFixed(0)}</strong> (até 90-95% da conta)<br><br>
+    <em>Estimativa conservadora (dados médios Cemig/MG). Para projeto exato, entre em contato!</em>
+  `;
+}
+</script>
+
+</body>
+</html>
